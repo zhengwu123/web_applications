@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Tips calculator</title>
+  <meta name="description" content="CS 390 wap-hw1">
+  <style type="text/css">
+  	body {
+  background:#999;
+}
+
+#background {
+    width:285px;
+    height:370px;
+    background:#50c48e;
+    margin:20px auto;
+    border-radius:15px;
+    border-style: solid;
+    border-color: white;
+    border-style:outset;
+    border-width:8px;
+
+}
+
+
+#checkamountform {
+    position: absolute;
+    font-family: sans-serif;
+    width:275px;
+    height:40px;
+    text-align: right;
+    
+
+
+}
+#tipsform{
+    color:white;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.button {
+    width:250px;
+    height:40px;
+    background-color: #fbb130;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 10px;
+    border-style:outset;
+}
+
+.button:active {
+  background-color: #df5300;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button:focus { outline-style: none; }
+#textarea{
+  /*visibility: hidden;*/
+  background-color: #909080;
+  resize: none;
+  margin-bottom: 7px;
+  -webkit-user-select: none; /* Chrome, Opera, Safari */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+  border-radius: 5px;
+  border-color: white;
+  color: #484848;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25;
+  border-style:ridge;
+
+}
+
+input{
+
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25;
+  size:  20;
+}
+.inputs{
+  margin-bottom: 8px;
+  height: 25px;
+}
+
+.text_control{
+text-align: left;
+padding-right:4em;
+}
+.text_control1{
+text-align: left;
+padding-right:1em;
+}
+</style>
+<script src="hw1.js"></script>
+</head>
+
+<body>
+  
+ <div id="background"><!-- Main background -->
+     
+<form id="checkamountform">
+  <div id="tipsform"> 
+    <textarea id = "textarea" rows="2" cols="35" readonly>
+</textarea> <br>
+<font size="2.5">Check Amount:&nbsp;</font><input type="number" class = "inputs" id = "checkamount" name="checkamount" placeholder ="0.0" required><br>
+<font size="2">Sales Tax %: &nbsp;&nbsp;</font><input type="number" class = "inputs" id = "taxpercentage" name="taxpercentage" placeholder ="7.0"  required><br>
+<font size="2.5" class = "text_control">Tip %:</font><input type="number" class = "inputs" id = "tippercentage" name="tipspercentage" placeholder ="18.0" required><br>
+<font size="2.5" class = "text_control1">Sales Tax :</font><input type="number" class = "inputs" id = "saletax" name="saletax" readonly><br>
+<font size="2.5" class = "text_control1">Tip Amount:</font><input type="number" class = "inputs" id = "tipamount" name="tipamount" readonly=""><br>
+</div>
+
+<button class= "button" type="button" onclick="outdateResult(0)">Tip Pre Tax </button><br>
+<button class= "button" type="button" onclick="outdateResult(1)">Tip On Total </button>
+</form> 
+</div>     
+</body>
+</html>
