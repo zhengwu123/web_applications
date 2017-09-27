@@ -1,10 +1,23 @@
 var Entrys = new Array();
 window.onload = function() {
- document.getElementById("datePicker").value = new Date().toISOString().substring(0, 10);
- if(localStorage.getItem("EmployeeID") != null){
- document.getElementById("EmployeeID").value = localStorage.getItem("EmployeeID");
+ //document.getElementById("datePicker").value = new Date().toISOString().substring(0, 10);
+ if(!localStorage.getItem("ValidUser")){
+ 	alert("You need to login to access this page.");
+	document.location.href = 'SignIn.html';
+ }
+ if(localStorage.getItem("currentuser") != null){
+ //document.getElementById("EmployeeID").value = localStorage.getItem("currentuser");
+}
+else{
+	//alert("You need to login first to access this page.");
+	//document.location.href = 'SignIn.html';
 }
  renew();
+}
+
+window.onclose = function()
+{
+  localStorage.setItem("currentuser",null);
 }
 
 
@@ -25,7 +38,31 @@ var totalhours = 0;
  document.getElementById("totalHours").innerHTML = totalhours;
 }
 
-    	
+function refresh(){
+var table = document.getElementById("myTableData");
+while(table.rows.length > 0) {
+  table.deleteRow(0);
+}
+
+	var keywords = document.getElementById("desKeywords").value;
+	var start = new Date(document.getElementById("dateFrom").value).getTime();
+	var end =  new Date(document.getElementById("dateEnd").value).getTime();
+	Entrys = JSON.parse(localStorage.getItem("Entrys"));
+
+	if(Entrys != null){
+
+	for (var i = 0; i < Entrys.length; i++){
+		var contains = Entrys[i].description.includes(keywords);
+		var date =  new Date(Entrys[i].date).getTime();
+		console.log(date);
+		console.log(contains);
+
+		if(date >= start && date <= end && contains){
+    	    insert_row(Entrys[i]);
+    	}
+		}
+		}
+	}
 
 
 function onSumbit(){
@@ -113,12 +150,12 @@ function insert_row(entry) {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    cell1.innerHTML = entry.EmployeeID;
-    cell2.innerHTML = entry.date;
-    cell3.innerHTML = entry.workhour;
-    cell4.innerHTML = entry.description;
-    cell5.innerHTML = "<button class=\"cancelbutton\" type='button' onclick='onDelete(this);'>X</button>";
+    //var cell5 = row.insertCell(4);
+    cell1.innerHTML = "<p ondblclick=\"onEdit(this);\">" + entry.EmployeeID +"</p>";
+    cell2.innerHTML = "<p ondblclick=\"onEdit(this);\">" + entry.date +"</p>";
+    cell3.innerHTML = "<p ondblclick=\"onEdit(this);\">" + entry.workhour +"</p>";
+    cell4.innerHTML = "<p ondblclick=\"onEdit(this);\">" + entry.description +"</p>";
+    //cell5.innerHTML = "<button class=\"cancelbutton\" type='button' onclick='onDelete(this);'>X</button>";
 }
 
 function onDelete(element){
@@ -135,6 +172,25 @@ function onDelete(element){
     }
 
 }
+
+function onEdit(element){
+	table = document.getElementById("myTableData");
+	Entrys = JSON.parse(localStorage.getItem("Entrys"));
+	var index = element.parentNode.parentNode.rowIndex;
+	
+	var entry = Entrys[Entrys.length -1 -index];
+	console.log(entry.EmployeeID);
+	localStorage.setItem("editID", entry.EmployeeID);
+	localStorage.setItem("editHours", entry.workhour);
+	localStorage.setItem("editDate",entry.date);
+	localStorage.setItem("editDescription",entry.description);
+	localStorage.setItem("deleteIndex",Entrys.length -1 -index);
+	localStorage.setItem("edit",true);
+	localStorage.removeItem("add",true);
+	document.location.href = 'Edit.html';
+}
+	
+
 
 function validate_date(date){
 	if (Date.parse(date)) {
@@ -165,5 +221,11 @@ function validate_description(description){
 		return false;
 	}
 	return true;
+}
+
+function addnewEntry(){
+	document.location.href = 'Edit.html';
+	localStorage.setItem("add",true);
+	localStorage.removeItem("edit",true);
 }
 

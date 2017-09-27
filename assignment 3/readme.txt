@@ -1,0 +1,8 @@
+valid users:
+
+EmployeeID     password
+user0            0
+user1            1
+user2            2
+user3            3
+user4            4

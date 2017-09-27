@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>Click the buttons to sort friend on type.</p>
+
+<button onclick="compare()">Sort</button>
+
+<p id="demo"></p>
+
+<script>
+var friend1 = {FirstName: "A",LastName:"B"}
+var friend2 = {FirstName: "A",LastName:"C"}
+var friend3 = {FirstName: "A",LastName:"A"}
+var frienlist = [friend1,friend2,friend3];
+function compare(){
+
+frienlist.sort(function(friend1,friend2){
+	if(friend1.LastName > friend2.LastName){
+	return 1;
+}
+return friend1.FirstName > friend2.FirstName;});
+display();
+
+}
+function display() {
+	document.getElementById("demo").innerHTML =
+  frienlist[0].FirstName + " " + frienlist[0].LastName + "<br>" +
+  frienlist[1].FirstName + " " + frienlist[1].LastName + "<br>" +
+  frienlist[2].FirstName + " " + frienlist[2].LastName;
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
+	
