@@ -281,5 +281,30 @@ function validate_description(description){
 	return true;
 }
 
+function edit_entry_close(){
+  if(on_confirm("Are you sure to close this window?")){
+  var entries_model = document.getElementById('background');
+  entries_model.style.display = "none";}
+  else{
+    return;
+  }
+}
+
+function time_log_close(){
+  if(on_confirm("Are you sure to close this window?")){
+  var entries_model = document.getElementById('background2');
+  entries_model.style.display = "none";}
+  else{
+    return;
+  }
+}
+// When the user clicks anywhere outside of the modal, close it
+function on_confirm(str) {
+    var txt;
+    var r = confirm(str);
+      return r;
+    
+}
+
 
 

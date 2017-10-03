@@ -52,6 +52,7 @@ function checkValidUser(){
       localStorage.setItem("currentuser", EmployeeID);
     }
     localStorage.setItem("ValidUser", true);
+    sessionStorage.setItem("userSession", true);
     console.log(localStorage.getItem("ValidUser"));
     document.location.href = 'Main.html';
   }

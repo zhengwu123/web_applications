@@ -1,0 +1,289 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Edit Entry</title>
+  <meta name="description" content="CS 390 wap-hw2">
+  <style type="text/css">
+  	body {
+  background:#c9dce2;
+}
+
+#background {
+    width:500px;
+    height:250px;
+    background:#fff;
+    margin:20px auto;
+    border-radius:3px;
+    border-style: solid;
+    border-color: white;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 10px;
+}
+
+#background2 {
+    width:500px;
+    height:270px;
+    background:#fff;
+    margin:20px auto;
+    border-radius:3px;
+    border-style: solid;
+    border-color: white;
+    box-shadow:
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 10px;
+}
+
+
+
+
+.button:active {
+  background-color: #df5300;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.button:focus { outline-style: none; }
+
+
+
+.text_control{
+text-align: left;
+padding-right:4em;
+color: #000
+}
+
+.inlineinput div {
+    display: inline;
+}
+#form{
+  margin-left:20px;
+  position:absolute;
+  font-family: "Times New Roman", Times, serif;
+}
+#form2{
+  width:450px;
+  height:200px;
+  margin-left:20px;
+  position:absolute;
+  font-family: "Times New Roman", Times, serif;
+}
+input[type = text] {
+    width: 100%;
+    height: 25px;
+    color: blue;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1.5px solid #3cb879;
+    font-family:'Lucida Casual', 'Comic Sans MS'; 
+}
+input[type = date] {
+    width: 100%;
+    height: 25px;
+    color: blue;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1.5px solid #3cb879;
+    font-family:'Lucida Casual', 'Comic Sans MS'; 
+}
+input[type = number] {
+    width: 100%;
+    height: 25px;
+    color: blue;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1.5px solid #3cb879;
+    font-family:'Lucida Casual', 'Comic Sans MS'; 
+}
+
+textarea {
+   resize: none;
+   border-style:groove;
+   border-width: 2px;
+   border-radius: 5px;
+}
+table { border-collapse: collapse; }
+td{
+  border-right: solid 1px #3cb879; 
+}
+.button:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+.button {
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 2px;
+  margin-left: 20px;
+}
+
+.button:hover {background-color: #3e8e41}
+hr {
+    border: 0;
+    border-top: 1px solid #3cb879;
+    padding: 0;
+}
+
+.scrollit {
+  width: 470px;
+    overflow:scroll;
+    overflow-x: hidden;
+    height:180px;
+    font-size: 15px;
+}
+.cancelbutton {
+  background-color: #f44336;
+  border-radius:10px;
+  color: white;
+  width: 20px;
+  text-align: left;
+  border-left: 0;
+  border-right: 3px;
+}
+
+.deletebutton {
+  background-color: #f44336;
+  border-radius:3px;
+  color: white;
+  text-align: left;
+  border-left: 0;
+  border-right: 3px;
+}
+.leftaligned{
+    margin-left: 0;
+    margin-right: auto;
+}
+button:focus {outline:0;}
+.cancelbutton:focus {outline:0;}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+<script src="Edit.js"></script>
+<script src="Shared.js"></script>
+</head>
+
+<body onunload="logOff()">
+  
+<div id="background"><!-- Main background -->
+
+<div id="form">
+  <span class="close" style='color: red;' onclick="edit_entry_close();">&times;</span>
+<h3 class = "text_control">Edit Entry</h3>
+<div>
+    Employee ID:
+    <span class="inlineinput">
+        <input type='text' id="EmployeeID" style='display: inline; width: 120px;'/>
+    </span>
+    Hours Worked:
+    <span class="inlineinput">
+        <input type='number' id='workHours' style='display: inline; width: 120px;' />
+    </span>
+    <br>
+    <br>
+</div>
+
+<div>
+    Date Worked:
+    <span class="inlineinput">
+        <input type='date' id = "datePicker" style='display: inline; width: 120px;' />
+    </span>
+    <span class="inlineinput">
+        <input type="checkbox" name="billable" id = "billable" style='display: inline;'> Billable?<br>
+        <br>
+    </span>
+</div>
+Description:
+<div>
+    
+        <textarea style='display: inline;' id='description' rows="5" cols="55">
+</textarea>
+    
+    
+        <button type="button" class="button" style='display: inline; width: 50px;' onclick='onSumbit();'>Save</button>
+        <button type="button" class="deletebutton" id = "deletebutton" style='display: inline; width: 50px;' onclick='Delete();' disabled = 'true'>Delete</button> 
+    
+</div>
+
+</div>  
+
+</div>  
+
+<div id="background2">
+ <span class="close" style='color: red;' onclick="time_log_close();">&times;</span>   
+<div id="form2">
+
+  <div>
+    <span class="inlineinput">
+        <h3 class = "text_control" style='display: inline;' >Time Log Entries</h3>
+    </span>
+    <span class="inlineinput">
+      Total Time Worked:
+        <div id = "totalHours" style='display: inline; width: 50px;' ></div>
+
+    </span>
+</div>
+<hr/>
+<table id="myTable" style="width:100%">
+  <tr>
+    <td width="15%"><b>Employee</b></td>
+    <td width="15%"><b>Date</b></td>
+    <td width="15%"><b>Hours</b></td>
+    <td width="50%"><b>Description<b></td>
+    <td width="5%"><b>Action</b></td>
+  </tr>
+</table>
+<hr/>
+<div class="scrollit">
+<table id="myTableData" class= "leftaligned" style="width:100%">
+  <tr>
+    <td width="20%"></td>
+    <td width="15%"></td>
+    <td width="25%"></td>
+    <td width="40%"></td>
+    <td width="5%"></td>
+  </tr>
+</table>
+</div>
+<hr/>
+<br>
+</div>
+</div> 
+</body>
+</html>
