@@ -1,0 +1,185 @@
+/* Main Page */
+
+#lblFilter {
+	position:absolute;
+	left:10px;
+	top:10px;
+	font-size:30px;
+}
+
+#divFilters {
+	background-color:#ffffff;
+	position:absolute;
+	left:10px;
+	top:50px;
+	width:600px;
+	height:140px;
+    border:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+}
+
+#lblDescContains {
+	position:absolute;
+	left:10px;
+	top:20px;
+}
+
+#txtDescContains {
+	position:absolute;
+	left:180px;
+	top:20px;
+    width:300px;
+}
+
+#btnRefresh {
+	position:absolute;
+	left:500px;
+	top:20px;
+}
+
+#lblDateFrom {
+	position:absolute;
+	left:10px;
+	top:60px;
+}
+
+#txtDateFrom {
+	position:absolute;
+	left:100px;
+	top:60px;
+    width:160px;
+}
+
+#lblDateThrough {
+	position:absolute;
+	left:270px;
+	top:60px;
+}
+
+#txtDateThrough {
+	position:absolute;
+	left:350px;
+	top:60px;
+    width:160px;
+}
+
+#chkShowCurrEmp {
+	position:absolute;
+	left:10px;
+	top:103px;
+}
+
+#lblShowCurrEmp {
+	position:absolute;
+	left:30px;
+	top:100px;
+}
+
+#btnAddNew {
+	position:absolute;
+	left:630px;
+	top:50px;
+    width:100px;
+}
+
+#lblEntries {
+	position:absolute;
+	left:10px;
+	top:200px;
+	font-size:30px;
+}
+
+#lblTotalHoursWorked {
+	position:absolute;
+	left:600px;
+	top:210px;
+}
+
+#divEntriesHead {
+	position:absolute;
+	left:10px;
+	top:240px;
+	height:30px;
+	width:800px;
+	background-color:#D3D3D3;
+    border:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+    font-family:sans-serif;
+    font-size:16px;
+}
+
+#divEntriesList {
+	position:absolute;
+	left:10px;
+	top:272px;
+	width:800px;
+	height:400px;
+	background-color:#FFFFFF;
+	overflow-y:scroll; 
+    border-left:1px solid #cdcdcd;
+    border-right:1px solid #cdcdcd;
+    border-bottom:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+    font-family:sans-serif;
+    font-size:16px;
+}
+
+.divEntriesCol1 {
+    position:absolute;
+    left:0px;
+    width:120px;
+    height:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-right:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+    cursor: pointer;
+}
+
+.divEntriesCol2 {
+    position:absolute;
+    left:120px;
+    width:120px;
+    height:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-right:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+    cursor: pointer;
+}
+
+.divEntriesCol3 {
+    position:absolute;
+    left:240px;
+    width:120px;
+    height:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-right:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+    cursor: pointer;
+}
+
+.divEntriesCol4 {
+    position:absolute;
+    left:360px;
+    width:400px;
+    height:30px;
+    display:flex;
+    padding-left:10px;
+    align-items:center;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.divEntriesRow {
+    height:30px;
+    width:780px;
+    border-bottom:1px solid #cdcdcd;
+    border-color:rgba(0,0,0,.15);
+}
