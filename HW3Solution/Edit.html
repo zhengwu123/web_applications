@@ -1,0 +1,104 @@
+<html>
+<head>
+	<style>
+
+		#lblEmployeeID {
+			position: absolute;
+			left: 50px;
+			top: 50px;
+		}
+
+		#txtEmployeeID {
+			position: absolute;
+			left: 150px;
+			top: 50px;
+		}
+
+		#lblHoursWorked {
+			position: absolute;
+			left: 350px;
+			top: 50px;
+		}
+
+		#txtHoursWorked {
+			position: absolute;
+			left: 450px;
+			top: 50px;
+		}
+
+		#lblDateWorked {
+			position: absolute;
+			left: 50px;
+			top: 100px;
+		}
+
+		#txtDateWorked {
+			position: absolute;
+			left: 150px;
+			top: 100px;
+		}
+
+		#lblDescription {
+			position: absolute;
+			left: 50px;
+			top: 150px;
+		}
+
+		#txtDescription {
+			position: absolute;
+			left: 50px;
+			top: 200px;
+			width: 600px;
+			height: 100px;
+		}
+
+		#chkBillable {
+			position: absolute;
+			left: 350px;
+			top: 100px;
+		}
+
+		#lblBillable {
+			position: absolute;
+			left: 370px;
+			top: 100px;
+		}
+
+		#btnSave {
+			position: absolute;
+			left: 670px;
+			top: 200px;
+            width: 100px;
+
+		}
+
+		#btnDelete {
+			position: absolute;
+			left: 670px;
+			top: 250px;
+            width: 100px;
+		}
+
+
+	</style>
+	<script language="javascript" text="text/javascript" src="Edit.js"></script>
+	 <script language="javascript" text="text/javascript" src="Shared.js"></script>
+</head>
+
+<body onload="body_onload()">
+
+	<label id="lblEmployeeID">Employee ID:</label>
+	<input type="text" id="txtEmployeeID"/>
+	<label id="lblHoursWorked">Hours Worked:</label>
+	<input type="text" id="txtHoursWorked"/>
+	<label id="lblDateWorked">Date Worked:</label>
+	<input type="date" id="txtDateWorked"/>
+	<label id="lblDescription">Description:</label>
+	<textarea id="txtDescription"></textarea>
+	<input type="checkbox" id="chkBillable"/>
+	<label id="lblBillable">Billable?</label>
+	<input type="button" id="btnSave" value="Save"/>
+	<input type="button" id="btnDelete" value="Delete"/>
+
+</body>
+</html>

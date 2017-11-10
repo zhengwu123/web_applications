@@ -1,0 +1,182 @@
+<html>
+<head>
+	<style>
+
+		#lblEmployeeID {
+			position: absolute;
+			left: 50px;
+			top: 50px;
+		}
+
+		#txtEmployeeID {
+			position: absolute;
+			left: 150px;
+			top: 50px;
+		}
+
+		#lblHoursWorked {
+			position: absolute;
+			left: 350px;
+			top: 50px;
+		}
+
+		#txtHoursWorked {
+			position: absolute;
+			left: 450px;
+			top: 50px;
+		}
+
+		#lblDateWorked {
+			position: absolute;
+			left: 50px;
+			top: 100px;
+		}
+
+		#txtDateWorked {
+			position: absolute;
+			left: 150px;
+			top: 100px;
+		}
+
+		#lblDescription {
+			position: absolute;
+			left: 50px;
+			top: 150px;
+		}
+
+		#txtDescription {
+			position: absolute;
+			left: 50px;
+			top: 200px;
+			width: 600px;
+			height: 100px;
+		}
+
+		#chkBillable {
+			position: absolute;
+			left: 350px;
+			top: 100px;
+		}
+
+		#lblBillable {
+			position: absolute;
+			left: 370px;
+			top: 100px;
+		}
+
+		#btnSave {
+			position: absolute;
+			left: 50px;
+			top: 300px;
+		}
+
+		#lblTimeLogEntries {
+			position: absolute;
+			left: 50px;
+			top: 370px;
+		}
+
+		#lblTotalHoursWorked {
+			position: absolute;
+			left: 350px;
+			top: 370px;
+		}
+
+		.divFriendsHead {
+			position: absolute;
+			left: 50px;
+			top: 400px;
+		}
+
+		.divFriendsHeadColl1 {
+			position: absolute;
+			left: 0px;
+		}
+
+		.divFriendsHeadColl2 {
+			position: absolute;
+			left: 100px;
+		}
+
+		.divFriendsHeadColl3 {
+			position: absolute;
+			left: 200px;
+		}
+
+		.divFriendsHeadColl4 {
+			position: absolute;
+			left: 300px;
+		}
+
+		.divFriendsList {
+			position: absolute;
+			left: 50px;
+			top: 420px;
+			background-color: #D3D3D3;
+			overflow-y: scroll; 
+			height: 100px;
+			width: 1000px;
+		}
+
+		.divFriendsRow {
+			position: relative;
+			width: 1000px;
+		}
+
+		.divFriendsColl1 {
+			display: inline-block;
+			width: 100px;
+		}
+
+		.divFriendsColl2 {
+			display: inline-block;
+			width: 100px;
+		}
+
+		.divFriendsColl3 {
+			display: inline-block;
+			width: 100px;
+		}
+
+		.divFriendsColl4 {
+			display: inline-block;
+			width: 550px;
+		}
+
+		.btnDelete {
+			display: inline-block;
+			width: 100px;
+		}
+
+
+	</style>
+	<script language="javascript" text="text/javascript" src="CS390-Assignment02.js"></script>
+</head>
+
+<body onload="body_onload()">
+
+	<label id="lblEmployeeID">Employee ID:</label>
+	<input type="text" id="txtEmployeeID"/>
+	<label id="lblHoursWorked">Hours Worked:</label>
+	<input type="text" id="txtHoursWorked"/>
+	<label id="lblDateWorked">Date Worked:</label>
+	<input type="date" id="txtDateWorked"/>
+	<label id="lblDescription">Description:</label>
+	<textarea id="txtDescription"></textarea>
+	<input type="checkbox" id="chkBillable"/>
+	<label id="lblBillable">Billable?</label>
+	<input type="button" id="btnSave" value="Save"/>
+	<label id="lblTimeLogEntries">Time Log Entries</label>
+	<label id="lblTotalHoursWorked"></label>
+
+	<div class="divFriendsHead">
+		<div class="divFriendsHeadColl1">Name</div>
+		<div class="divFriendsHeadColl2">Date</div>
+		<div class="divFriendsHeadColl3">Hours</div>
+		<div class="divFriendsHeadColl4">Description</div>
+	</div>
+	<div class="divFriendsList" id="divFriendsList">
+	</div>
+
+</body>
+</html>

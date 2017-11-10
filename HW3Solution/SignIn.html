@@ -1,0 +1,71 @@
+<html>
+<head>
+	<style>
+		.divHeader {
+			position: relative;
+			margin-bottom: 30px;
+		}
+
+		#lblHeader {
+			font-size: 30px;
+		}
+
+		#txtEmployeeID {
+			position: relative;
+			left: 10px;
+		}
+
+		#txtPassword {
+			position: relative;
+			left: 10px;
+		}
+
+		.divEmployeeID {
+			position: relative;
+			margin-bottom: 10px;
+		}
+
+		.divPassword {
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.divSignIn {
+			position: relative;
+			margin-bottom: 10px;
+		}
+		.divRemember {
+			position: relative;
+			margin-bottom: 10px;
+		}
+	</style>
+	 <script language="javascript" text="text/javascript" src="SignIn.js"></script>
+	 <script language="javascript" text="text/javascript" src="Shared.js"></script>
+</head>
+
+<body onload="body_onload()">
+
+	<div class="divLogin" align="center">
+		<div class="divHeader">
+			<label id="lblHeader">Time Log Sign In</label>
+		</div>
+		<div class="divEmployeeID">
+			<label id="lblUsername">Employee ID:</label>
+			<input type="text" id="txtEmployeeID" />
+		</div>
+
+		<div class="divPassword">
+			<label id="lblPassword">Password:</label>
+			<input type="password" id="txtPassword" />
+		</div>
+
+		<div class="divSignIn">
+			<button id="btnSignIn">Sign in</button>
+		</div>
+		<div class="divRemember">
+			<input type="checkbox" id="chkRemember"/>
+			<label id="lblRemember">Remember Employee ID</label>
+		</div>
+	</div>
+
+</body>
+</html>

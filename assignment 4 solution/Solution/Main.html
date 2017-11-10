@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>CS390 Time Log</title>
+
+    <link rel="stylesheet" type="text/css" href="App.css">
+    <link rel="stylesheet" type="text/css" href="Main.css">
+    <link rel="stylesheet" type="text/css" href="SignIn.css">
+    <link rel="stylesheet" type="text/css" href="Edit.css">
+    <link rel="stylesheet" type="text/css" href="Modal.css">
+
+    <script language="javascript" text="text/javascript" src="Main.js"></script>
+    <script language="javascript" text="text/javascript" src="SignIn.js"></script>
+    <script language="javascript" text="text/javascript" src="Edit.js"></script>
+    <script language="javascript" text="text/javascript" src="Shared.js"></script>
+
+</head>
+
+<body onload="body_onload()">
+
+    <!-- Main Page -->
+
+    <label id="lblFilter">Filters</label>
+    <div id="divFilters">
+        <label id="lblDescContains">Description contains:</label>
+		<input type="text" id="txtDescContains">
+		<button id="btnRefresh">Refresh</button>
+		<label id="lblDateFrom">Date from:</label>
+		<input type="date" id="txtDateFrom">
+		<label id="lblDateThrough">through:</label>
+		<input type="date" id="txtDateThrough">
+		<input type="checkbox" id="chkShowCurrEmp"/>
+		<label id="lblShowCurrEmp">Show current employee only</label> 
+	</div>
+
+    <button id="btnAddNew">Add New...</button>
+
+    <label id="lblEntries">Time Log Entries</label>
+    <label id="lblTotalHoursWorked"></label>
+
+    <div id="divEntriesHead">
+        <div id="divEntriesHead1" class="divEntriesCol1">Employee ID</div>
+        <div id="divEntriesHead2" class="diventriescol2">Date</div>
+        <div id="divEntriesHead3" class="divEntriesCol3">Hours</div>
+        <div id="divEntriesHead4" class="divEntriesCol4">Description</div>
+    </div>
+
+    <div id="divEntriesList">
+    </div>
+
+    <!-- Modal Sign In Dialog -->
+
+    <div id="divSignIn" class="divModal">
+        <div id="divSignInForm" class="divModalForm">
+            <div class="divModalTitle">
+                CS390 Time Log Sign In
+            </div>
+
+            <label id="lblSignInEmployeeID">Employee ID:</label>
+            <input type="text" id="txtSignInEmployeeID" />
+            <label id="lblPassword">Password:</label>
+            <input type="password" id="txtPassword" />
+            <input type="checkbox" id="chkRemember" />
+            <label id="lblRemember">Remember Employee ID</label>
+
+            <button id="btnSignIn">Sign In</button>
+        </div>
+    </div>
+
+    <!-- Modal Edit Dialog -->
+
+    <div id="divEdit" class="divModal">
+        <div id="divEditForm" class="divModalForm">
+            <div class="divModalTitle">
+                <span id="spanEditTitle">title</span>
+                <span id="spanEditX" class="spanModalX">&times;</span>
+            </div>
+
+            <label id="lblEmployeeID">Employee ID:</label>
+            <input type="text" id="txtEmployeeID" />
+            <label id="lblHoursWorked">Hours Worked:</label>
+            <input type="text" id="txtHoursWorked" />
+            <label id="lblDateWorked">Date Worked:</label>
+            <input type="date" id="txtDateWorked" />
+            <label id="lblDescription">Description:</label>
+            <textarea id="txtDescription"></textarea>
+            <input type="checkbox" id="chkBillable" />
+            <label id="lblBillable">Billable?</label>
+
+            <button id="btnEditSave">Save</button>
+            <button id="btnEditCancel">Cancel</button>
+            <button id="btnEditDelete">Delete...</button>
+        </div>
+    </div>
+
+    <!-- Modal Alert Dialog -->
+
+    <div id="divAlert" class="divModal">
+        <div id="divAlertForm" class="divModalForm">
+            <div class="divModalTitle">
+                CS390 Time Log
+                <span id="spanAlertX" class="spanModalX">&times;</span>
+            </div>
+            <div id="divAlertMessage">
+            </div>
+            
+            <button id="btnAlertOK">OK</button>
+        </div>
+    </div>
+
+    <!-- Modal Confirm Dialog -->
+
+    <div id="divConfirm" class="divModal">
+        <div id="divConfirmForm" class="divModalForm">
+            <div class="divModalTitle">
+                CS390 Time Log
+                <span id="spanConfirmX" class="spanModalX">&times;</span>
+            </div>
+            <div id="divConfirmMessage">
+            </div>
+
+            <button id="btnConfirmYes">Yes</button>
+            <button id="btnConfirmNo">No</button>
+        </div>
+    </div>
+
+</body>
+</html>
