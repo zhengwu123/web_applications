@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 7.5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap-formhelpers.css">
+    <link rel="stylesheet" type="text/css" href="my.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-dialog.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+
+<!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script language="javascript" text="text/javascript" src="bootstrap-formhelpers.js"></script>
+    <script language="javascript" text="text/javascript" src="bootstrap-dialog.js"></script>
+    <script language="javascript" text="text/javascript" src="my.js"></script>
+    
+
+</head>
+
+
+<body onload="body_onload()">
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Homework 7.5</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#" id="nav_username"></a></li>
+    </ul>
+    <button class="btn btn-danger navbar-btn" onclick="logout()">Logout</button>
+  </div>
+</nav>
+	<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#login-modal">Sign In</button>
+	<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#addquestion-modal">Add Question</button>
+
+    <!-- Main Page -->
+    <div class="container-fluid">
+    	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form action="http://localhost:8000/auth/signin" method="post">
+					<input type="text" name="userID" id="userID" placeholder="Username">
+					<input type="password" name="password" id="password" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login" onclick="validate_login()">
+				  </form>
+					
+				</div>
+			</div>
+		  </div>
+
+
+    	<div class="modal fade" id="addquestion-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>AddQuestion</h1><br>
+				  <form action="http://localhost:8000/questionadd" method="post">
+					<input type="text" name="categoryCode" placeholder="Category Code">
+					<input type="text" name="categoryTitle" placeholder="Category Title">
+					<input type="text" name="dollarValue" placeholder="dollar Value">
+					<input type="text" name="questionText" placeholder="question Text">
+					<input type="text" name="answerText" placeholder="answer Text">
+					<input type="text" name="showNumber" placeholder="Show Number">
+					<input type="date"  name="airDate" class = "glyphicon glyphicon-calendar"placeholder="Air Date">
+					<input type="text" name="auth" placeholder="auth">
+					<input type="submit" name="add" class="login loginmodal-submit" value="Add Question" onclick="validate_add_question()">
+				  </form>
+					
+				</div>
+			</div>
+		  </div>
+		  <div class="loader hidden1" id="loader" ></div>
+
+
+    </div>
+
+</body>
+</html>

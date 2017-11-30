@@ -1,0 +1,146 @@
+﻿<html>
+<head>
+
+<title>CS390 Lutes 01</title>
+
+<script language="javascript" type="text/javascript" src="CS390-Lutes-01.js"></script>
+<script src="https://vuejs.org/js/vue.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="my.css">
+
+
+</head>
+
+<body onload="body_onload()">
+    
+<!-- User Interface Elements -->
+<div id="app">
+
+<label id="lblCheckAmount">Check Amount</label>
+<label id="lblSalesTaxPct">Sales Tax %</label>
+<label id="lblTipPct">Tip %</label>
+<label id="lblSalesTaxAmount">Sales Tax</label>
+<label id="lblTipAmount">Tip Amount</label>
+<input type="text" id="txtCheckAmount" v-model="txtCheckAmount" />
+<label id="lblOp1Message">{{ op1Message }}</label>
+<input type="text" id="txtSalesTaxPct" v-model="txtSalesTaxPct" />
+<label id="lblOp1Message">{{ op2Message }}</label>
+
+<input type="text" id="txtTipPct" v-model="txtTipPct"/>
+<label id="lblOp1Message">{{ op3Message }}</label>
+<input type="text" id="txtSalesTaxAmount" readonly="readonly" v-model="taxAmt"/>
+<input type="text" id="txtTipAmount" readonly="readonly" v-model="tipAmt"/>
+
+<br>
+<label for="btnTipPreTax1" id="l1">
+<input type="radio" 
+    id="btnTipPreTax1" 
+    value="TipPreTax" 
+    name = "tax"
+    v-model="picked"
+/>
+Tip Pre Tax</label>
+
+
+<label for="btnTipOnTotal1" id="l2">
+<input type="radio" 
+    id="btnTipOnTotal1" 
+    value="TipOnTotal"
+    name = "tax" 
+    v-model="picked"
+/>
+Tip On Total</label>
+
+
+
+</body>
+</div>
+</html>
+
+<script>
+new Vue({
+        el: "#app",
+
+        data: {
+            txtCheckAmount: "",
+            txtSalesTaxPct: "7.0",
+            txtTipPct: "18",
+            taxAmt:"",
+            tipAmt:"",
+            picked:"",
+        },
+    computed: {
+      op1Message: function () {
+                if (this.txtCheckAmount === "") {
+                    return "";
+                }
+                if (tryParse(this.txtCheckAmount, 2) === false) {
+                     txtCheckAmount.focus();
+                    return "check amount must be a valid number.";
+                }
+                if(parseFloat(this.txtCheckAmount) < 0){
+                    return "check amount must be a positive number.";
+                }
+                return "";
+            },
+
+            op2Message: function () {
+                if (this.txtSalesTaxPct === "") {
+                    return "";
+                }
+                if (tryParse(this.txtSalesTaxPct, 4) === false) {
+                    txtSalesTaxPct.focus();
+                    return "tax percentage required and must be a valid number.";
+                }
+                if(parseFloat(this.txtSalesTaxPct) < 0){
+                    txtSalesTaxPct.focus();
+                    return "tax percentage  and must be a positive number.";
+                }
+                return "";
+            },
+
+                op3Message: function () {
+                if (this.txtTipPct === "") {
+                    return "";
+                }
+                if (tryParse(this.txtTipPct, 4) === false) {
+                    txtTipPct.focus();
+                    return "tips percentage required and must be a valid number.";
+                }
+                if(parseFloat(this.txtTipPct) < 0){
+                    txtTipPct.focus();
+                    return "tips percentage and must be a positive number.";
+                }
+                return "";
+            },
+
+
+
+
+
+    },
+    watch:{
+        picked: function(){
+
+                    if (this.picked === "TipPreTax") {
+                        console.log("pretax");
+                    btnTipPreTax_onclick();
+                    this.taxAmt = gSalesTaxAmount.toFixed(2);
+                    this.tipAmt = gTipAmount.toFixed(2);
+                    return;
+
+                }
+                if (this.picked === "TipOnTotal") {
+                    console.log("total");
+                    btnTipOnTotal_onclick();
+                    this.taxAmt = gSalesTaxAmount.toFixed(2);
+                    this.tipAmt = gTipAmount.toFixed(2);
+                    return ;
+                }
+    }
+    }
+
+    });
+
+</script>

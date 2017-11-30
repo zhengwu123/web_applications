@@ -159,7 +159,10 @@ app.post('/questionadd', function(req, res) {
     var showNumber = req.body.showNumber;
     var airDate = req.body.airDate;
     var auth = req.body.auth;
-    //console.log(auth);
+    console.log(categoryTitle);
+    console.log(categoryCode);
+    console.log(auth);
+    console.log(airDate);
     var isnum = /^\d+$/.test(categoryCode);
     if( !isnum ){
         errFlag = true;
@@ -225,7 +228,7 @@ app.post('/questionadd', function(req, res) {
 
                 db.all(checkquery1, function(err1,rows) {
 
-                    if(rows != null && rows[0].CategoryCode != categoryCode){
+                    if(rows[0] != undefined && rows[0]. CategoryTitle != categoryTitle){
                         console.log(rows + "111");
                         errFlag = true;
                         return res.status(400).json({message: "Invalid Category Code"});
@@ -241,7 +244,7 @@ app.post('/questionadd', function(req, res) {
                     " WHERE CategoryCode = "+ categoryCode +"";
                 console.log(checkquery2);
                 db.all(checkquery2, function(err,rows) {
-                    if(rows != null && rows[0].CategoryTitle != categoryTitle){
+                    if(rows[0] != undefined && rows[0].CategoryCode != categoryCode){
                             console.log(rows);
                             errFlag = true;
                             return res.status(400).json({message: "Invalid Category Title"});

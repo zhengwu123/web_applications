@@ -1,0 +1,90 @@
+/* Edit Modal Dialog */
+
+#divEditForm {
+    position:relative;
+    width:610px;
+    height:340px;
+}
+
+#lblEmployeeID {
+	position:absolute;
+	left:30px;
+	top:60px;
+}
+
+#txtEmployeeID {
+	position:absolute;
+	left:150px;
+	top:60px;
+	width:180px;
+}
+
+#lblHoursWorked {
+	position:absolute;
+	left:350px;
+	top:60px;
+}
+
+#txtHoursWorked {
+	position:absolute;
+	left:480px;
+	top:60px;
+    width:100px;
+}
+
+#lblDateWorked {
+	position:absolute;
+	left:30px;
+	top:100px;
+}
+
+#txtDateWorked {
+	position:absolute;
+	left:150px;
+	top:100px;
+	width:180px;
+}
+
+#lblDescription {
+	position:absolute;
+	left:30px;
+	top:140px;
+}
+
+#txtDescription {
+	position:absolute;
+	left:30px;
+	top:170px;
+	width:550px;
+	height:100px;
+}
+
+#chkBillable {
+	position:absolute;
+	left:350px;
+	top:104px;
+}
+
+#lblBillable {
+	position:absolute;
+	left:370px;
+	top:100px;
+}
+
+#btnEditSave {
+	position:absolute;
+	left:300px;
+	top:290px;
+}
+
+#btnEditCancel {
+	position:absolute;
+	left:400px;
+	top:290px;
+}
+
+#btnEditDelete {
+	position:absolute;
+	left:500px;
+	top:290px;
+}
